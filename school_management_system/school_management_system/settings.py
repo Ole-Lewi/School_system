@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangorestframework',
+    'rest_framework',
     'school',
 ]
 
@@ -71,6 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'school_management_system.wsgi.application'
 
+AUTH_USER_MODEL = 'school.CustomUser'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
