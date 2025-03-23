@@ -38,7 +38,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'  # Required for authentication
-    REQUIRED_FIELDS = ['full_name','email']  # Required when user is created
+    REQUIRED_FIELDS = ['full_name',]  # Required when user is created
 
     def __str__(self):
         return f"{self.full_name} ({self.role})"

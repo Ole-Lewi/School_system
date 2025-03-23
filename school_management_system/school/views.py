@@ -1,12 +1,12 @@
 from django.shortcuts import render
 
 # Create your views here.
-from .models import Student, Teacher, Subject, Class, School, Exam_Results,Timetable,Attendance
+from .models import Student, Teacher, Exam_Results,Timetable,Attendance
 
 #Authentication Views
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
 
@@ -38,7 +38,7 @@ class StudentListCreateView(ListCreateAPIView):
 class StudentDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
 
 
 
@@ -74,6 +74,7 @@ class TimetableUploadView(APIView):
 class TimetableListView(ListCreateAPIView):
     queryset = Timetable.objects.all()
     serializer_class = TimetableSerializer
+    permission_classes = [AllowAny]
 
 #Exam Results Views
 
@@ -93,6 +94,7 @@ class Exam_ResultsUploadView(APIView):
 class Exam_ResultsListView(ListCreateAPIView):
     queryset = Exam_Results.objects.all()
     serializer_class = Exam_ResultsSerializer
+    permission_classes = [AllowAny]
 
 #class StudentResultView(APIView):
  #   def get(self, request, student_id):

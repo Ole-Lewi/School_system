@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser
+from .urls import urlpatterns
 
 class CustomUserAdmin(UserAdmin):
     list_display = ('email', 'full_name', 'role', 'is_staff', 'is_active')
