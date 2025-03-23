@@ -80,7 +80,7 @@ class TimetableListView(ListCreateAPIView):
 from .serializers import Exam_ResultsSerializer
 
 class Exam_ResultsUploadView(APIView):
-    parser_classes = (MultiPartParser, FormParser)
+    parser_classes = (MultiPartParser, FormParser) #allows files uploads
     permission_classes = [IsAdminUser]
 
     def post(self, request):
